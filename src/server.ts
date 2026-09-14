@@ -1,8 +1,13 @@
 
 import app from "./app.js";
+import { config } from "./config/index.js";
+import logger from "./lib/logger.js";
+import { setupGracefulShutdown } from "./utils/shutdown.js";
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+const server  = app.listen(config.PORT, () => {
+  logger.info(
+    `${config.SERVICE_NAME} is running on http://localhost:${config.PORT}`,
+  );
 })
+
+setupGracefulShutdown(server);

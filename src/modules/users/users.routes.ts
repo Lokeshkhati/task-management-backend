@@ -4,9 +4,9 @@ import {
   getUsersByIdController,
 } from "./users.controller.js";
 
-const router: express.Router = express.Router();
+const userRouter: express.Router = express.Router();
 
-router.get("/", getUsersController);
-router.get("/:id", getUsersByIdController);
+userRouter.get("/", getUsersController);
+userRouter.get("/:id", getUsersByIdController);
 
-export default router;
+export default userRouter;
