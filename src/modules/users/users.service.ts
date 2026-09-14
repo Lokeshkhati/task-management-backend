@@ -1,5 +1,5 @@
-import { findAllUsers, findUserById } from "../../db/queries/users.queries.js";
 import { AppError } from "../../lib/errors.js";
+import { findAllUsers, findUserById } from "./users.repository.js";
 
 export async function getUsers() {
   return findAllUsers();
