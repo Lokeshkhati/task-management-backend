@@ -4,7 +4,7 @@ export async function findAllUsers() {
   const result = await pool.query(`
     SELECT
       id,
-      name,
+      full_name,
       email,
       created_at
     FROM users
@@ -19,7 +19,7 @@ export async function findUserById(id: string) {
     `
     SELECT
       id,
-      name,
+      full_name,
       email,
       created_at
     FROM users

@@ -8,15 +8,10 @@
     "migrate": "node-pg-migrate -m src/db/migrations --envPath .env",
     "migrate:up": "pnpm migrate up",
     "migrate:down": "pnpm migrate down",
-    "migrate:create": "pnpm migrate create -j sql --migration-filename-format index",
+    "migrate:redo": "pnpm migrate redo",
+    "migrate:create": "pnpm migrate create -j sql --migration-filename-format utc",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "typecheck": "tsc --noEmit",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "check": "pnpm format:check && pnpm lint && pnpm typecheck"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",

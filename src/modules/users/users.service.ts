@@ -1,7 +1,7 @@
 import { AppError } from "../../lib/errors.js";
 import { findAllUsers, findUserById } from "./users.repository.js";
 
-export async function getUsers() {
+export async function getUsersService() {
   return findAllUsers();
 }
 

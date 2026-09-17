@@ -1,13 +1,13 @@
 import type { Request, Response, NextFunction } from "express";
-import { getUsers, getUsersById } from "./users.service.js";
+import {  getUsersById, getUsersService } from "./users.service.js";
 
 export async function getUsersController(
-  req: Request,
+  _req: Request,
   res: Response,
   next: NextFunction
 ) {
   try {
-    const users = await getUsers();
+    const users = await getUsersService();
 
     res.json({
       data: users,
